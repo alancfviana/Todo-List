@@ -1,19 +1,19 @@
 let lista = document.getElementsByTagName("LI")
 let i
 for (i = 0; i < lista.length; i++) {
-  let fechar = document.createElement("fechar")
+  let botaofechar = document.createElement("botaofechar")
   let x = document.createTextNode("\u00D7")
-  fechar.className = "fechar"
-  fechar.appendChild(x)
-  lista[i].appendChild(fechar)
+  botaofechar.className = "fechar"
+  botaofechar.appendChild(x)
+  lista[i].appendChild(botaofechar)
 }
 
-
 let fechar = document.getElementsByClassName("fechar")
+
 for (i = 0; i < fechar.length; i++) {
   fechar[i].onclick = function() {
-    let body = this.parentElement
-    body.style.display = "none"
+    let div = this.parentElement
+    div.style.display = "none"
   }
 }
 
@@ -38,20 +38,21 @@ function novoElemento() {
   }
   document.getElementById("entrada").value = ""
 
-  let fechar = document.createElement("fechar")
+  let botaofechar = document.createElement("botaofechar")
   let x = document.createTextNode("\u00D7")
-  fechar.className = "fechar"
-  fechar.appendChild(x)
-  li.appendChild(fechar)
+  botaofechar.className = "fechar"
+  botaofechar.appendChild(x)
+  li.appendChild(botaofechar)
 
+  
   for (i = 0; i < fechar.length; i++) {
     fechar[i].onclick = function() {
-      let body = this.parentElement
-      body.style.display = "none"
-    }
-  }   
-}
+      let div = this.parentElement;
+      div.style.display = "none";
+    
+  } }  
 
+}
 
 let input = document.getElementById("entrada");
 input.addEventListener("keypress", function(event) {
@@ -59,4 +60,4 @@ input.addEventListener("keypress", function(event) {
     event.preventDefault();
     document.getElementById("botaoadicionar").click();
   }
-});
+})
